@@ -1,0 +1,5 @@
+optimizer : 'RMSprop'
+lr : 1e-3
+scheduler : 'Reduce'
+hpara : 1000
+hpara2 : 1

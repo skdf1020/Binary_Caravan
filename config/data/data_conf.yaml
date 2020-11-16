@@ -1,0 +1,10 @@
+#main_path: "/root/labs/datahouse/NST_0814/dataset/"
+main_path: "C:/Users/TJ_Park/Desktop/Work/Storage/3_dataset_1002_preprocessed"
+total_length : 249
+batch_size: 64
+test_batch_size: 64
+num_workers: 18
+method: 'npy'
+cross_validation: False
+validistest: True
+kfold: False

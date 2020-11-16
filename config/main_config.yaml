@@ -1,0 +1,13 @@
+defaults:
+  - data: data_conf
+  - model: model_conf
+  - network: network_conf
+  - trainer : trainer_conf
+  - transform: transform_conf
+  - logger: logger_conf
+  - opt: opt_conf
+
+#hydra:
+#  run:
+##    dir: /root/labs/datahouse/hydra/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+#    dir: C:/Users/TJPark/Desktop/Work/hydra/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
