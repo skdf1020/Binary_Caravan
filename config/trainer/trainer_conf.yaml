@@ -1,9 +1,10 @@
-max_epochs: 100
-gpus: 1
-log_dir: '/root/labs/datahouse/NST/pth_1d'
-distributed: 'dp'
-log_save_interval: 1
-testing: True
-fitting: True
-auto_lr: False
-resume: None
+trainer:
+    max_epochs: 100
+    gpus: 1
+    log_dir: '/home/tj/PycharmProjects/Binary_caravan/train_log'
+    distributed: 'dp'
+    log_save_interval: 1
+    testing: True
+    fitting: True
+    auto_lr: False
+    resume: None

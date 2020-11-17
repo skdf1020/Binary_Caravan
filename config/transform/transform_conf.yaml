@@ -1,22 +1,23 @@
-name: 'NST_transform_1d'
-ver: 1
-randaugment: False
-rand_n: 5
-rand_m: 5
-augments_trial: False
-augments: 'Identity'
-v: 0.1
+transform:
+    name: 'NST_transform_1d'
+    ver: 1
+    randaugment: False
+    rand_n: 5
+    rand_m: 5
+    augments_trial: False
+    augments: 'Identity'
+    v: 0.1
 
-spec:
-    height: 599
-    width: 9600
-    gray_channel: 1
-    translate: 0.3
-    mean: 6.2656
-    std: 13.4626
-    permute_units: 5
-    num_mask: 2
-    T_mask: 100
-    F_mask: 50
-    noise_mean: 0
-    noise_std: 0.1
+    spec:
+        height: 599
+        width: 9600
+        gray_channel: 1
+        translate: 0.3
+        mean: 6.2656
+        std: 13.4626
+        permute_units: 5
+        num_mask: 2
+        T_mask: 100
+        F_mask: 50
+        noise_mean: 0
+        noise_std: 0.1

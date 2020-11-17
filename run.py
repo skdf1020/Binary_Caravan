@@ -16,7 +16,7 @@ warnings.filterwarnings(action='ignore')
 seed_everything(328328)  # seed for reproduciblity
 
 
-@hydra.main(config_path='./config', config_name='main_config')
+@hydra.main(config_path='./config/main_config.yaml')#, config_name='main_config.yaml')
 def my_app(cfg):
     # transform
     train_transform = _transform.get_transform(cfg.transform.name)(cfg.transform.spec, ver=cfg.transform.ver,
@@ -50,7 +50,7 @@ def my_app(cfg):
                                version=cfg.logger.ver)
 
     checkpoint_callback = ModelCheckpoint(
-        filepath=Path(cfg.logger.save_dir) / Path(cfg.logger.name) / Path(cfg.logger.ver),
+        filepath=Path(cfg.logger.save_dir+'/'+cfg.logger.name+'/'+str(cfg.logger.ver)),
         save_top_k=1,
         verbose=False,
         monitor='val_loss',
@@ -92,8 +92,9 @@ def my_app(cfg):
     print(trainer.callback_metrics['avg_test_acc'])
 
     torch.save(model.network.state_dict(),
-               Path(cfg.logger.save_dir) / Path(cfg.logger.name) / Path(cfg.logger.ver) / 'best_state.pth')
-    print(Path(cfg.logger.save_dir) / Path(cfg.logger.name) / Path(cfg.logger.ver) / 'best_state.pth')
+               Path(cfg.logger.save_dir+'/'+cfg.logger.name+'/'+str(cfg.logger.ver)+'/best_state.pth'))
+               # Path(cfg.logger.save_dir) / Path(cfg.logger.name) / Path(cfg.logger.ver) / 'best_state.pth')
+    print(Path(cfg.logger.save_dir+'/'+cfg.logger.name+'/'+str(cfg.logger.ver)+'/best_state.pth'))
 
 
 if __name__ == '__main__':

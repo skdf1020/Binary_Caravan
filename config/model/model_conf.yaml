@@ -1,1 +1,2 @@
-loss_func: 'MCE'
+model:
+    loss_func: 'MCE'

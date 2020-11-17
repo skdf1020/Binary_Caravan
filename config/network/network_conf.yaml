@@ -1,5 +1,6 @@
-net: 'NST_EffiNet'
-ver: 0
-gradcam: False
-gradcam_num: 30
-structure: ['0']
+network:
+    net: 'NST_EffiNet'
+    ver: 0
+    gradcam: False
+    gradcam_num: 30
+    structure: ['0']
