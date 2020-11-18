@@ -34,14 +34,6 @@ class Lt(LightningModule):
         accu = self.acc(y_hat, y)
         return y_hat, loss, accu  # 여기 층수 맞추기... 다시 한번 딥러닝 로스 function 공부
 
-    # def configure_optimizers(self):
-    #     optimizer = get_optimizer(self.opt_conf.optimizer)(self.parameters(), self.lr)
-    #     if self.opt_conf.lr_scheduler == 'OneCycleLR': self.opt_conf.hpara2 = int(
-    #         self.hparams.data.total_length / self.hparams.data.batch_size) + 1
-    #     scheduler = get_scheduler(self.opt_conf.lr_scheduler, optimizer, self.lr, self.opt_conf.hpara,
-    #                               self.opt_conf.hpara2)
-    #     return [optimizer], [scheduler]
-
     def configure_optimizers(self):
         optimizer = get_optimizer(self.opt_conf.optimizer)(self.parameters(), self.lr)
         if self.opt_conf.scheduler == 'OneCycleLR': self.opt_conf.hpara2 = int(

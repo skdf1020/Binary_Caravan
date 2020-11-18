@@ -41,8 +41,7 @@ def my_app(cfg):
     OmegaConf.update(cfg, "network.structure", net.structure)
 
     # model
-    model = pl.Lt(net, loader_dict, cfg.opt,
-                  cfg.model.loss_func, cfg)
+    model = pl.Lt(net, loader_dict, cfg.opt, cfg.model.loss_func, cfg)
 
     # logger
     logger = TensorBoardLogger(save_dir=cfg.logger.save_dir,
